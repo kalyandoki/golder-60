@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   FaClock,
   FaUsers,
@@ -6,18 +6,14 @@ import {
   FaBolt,
   FaCheckCircle,
   FaQuoteLeft,
-  FaCalendarAlt,
   FaUserFriends,
   FaPlay,
   FaTimes,
-  FaShareAlt,
-  FaGift,
   FaChevronDown,
   FaInstagram,
   FaYoutube,
   FaLinkedin,
   FaWhatsapp,
-  FaEnvelope,
   FaMoneyBillWave,
   FaHeart,
   FaBars,
@@ -25,22 +21,11 @@ import {
 import mentorVideo from "../assets/videos/metor-video.mp4";
 
 const G60LandingPage = () => {
-  const [activeWeek, setActiveWeek] = useState("week3");
-  const [activeFAQ, setActiveFAQ] = useState(null);
+  const [activeWeek, setActiveWeek] = useState("week1");
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    mobile: "",
-    city: "",
-    health: false,
-    relationships: false,
-    money: false,
-    happiness: false,
-    consent: false,
-  });
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -51,21 +36,7 @@ const G60LandingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
-  };
-
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setActiveFAQ(activeFAQ === index ? null : index);
   };
 
@@ -85,7 +56,7 @@ const G60LandingPage = () => {
     { id: "meet-your-mentor", label: "Meet Your Mentor" },
     { id: "curriculum", label: "Curriculum" },
     { id: "testimonials", label: "Testimonials" },
-    { id: "how-to-join", label: "How to Join" },
+    { id: "how-to-attend", label: "How to Attend" },
     { id: "faq", label: "FAQ" },
   ];
 
@@ -651,7 +622,7 @@ const G60LandingPage = () => {
       </section>
 
       {/* How to Join Section */}
-      <section id="how-to-join" className="py-20 px-4">
+      <section id="how-to-attend" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
