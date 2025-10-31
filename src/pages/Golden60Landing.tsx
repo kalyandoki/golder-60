@@ -17,6 +17,7 @@ import {
   FaMoneyBillWave,
   FaHeart,
   FaBars,
+  FaBalanceScale,
 } from "react-icons/fa";
 import mentorVideo from "../assets/videos/metor-video.mp4";
 
@@ -258,7 +259,7 @@ const G60LandingPage = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3 bg-[#D4A017]/10 rounded-lg p-4 border border-[#D4A017]/20 hover:border-[#D4A017]/40 transition-all">
-                <FaCircle className="w-6 h-6 text-[#D4A017] flex-shrink-0" />
+                <FaBalanceScale className="w-6 h-6 text-[#D4A017] flex-shrink-0" />
                 <span className="text-sm text-gray-300">
                   4 life pillars covered
                 </span>
