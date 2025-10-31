@@ -49,8 +49,17 @@ const G60LandingPage = () => {
     "What if I miss Day 1 — can I still join?",
   ];
 
+  const faqsAns = [
+    "The next cohort starts on [Start Date — replace]. Sessions run daily from 5:00–6:00 AM for 21 consecutive days.",
+    "Yes — registration is free for this cohort. We show a payment step for commitment, but price is ₹0 for now.",
+    "Absolutely. Recordings will be posted for all registered members.",
+    "Your data is visible to the admin. Promoters can only see leads they personally referred (name, email & phone) through their referral dashboard.",
+    "After registration you'll receive an email & WhatsApp link each morning. Add the calendar invite to stay reminded.",
+    "Yes — start anytime during the first three days and catch up with recordings and community check-ins.",
+  ];
+
   const navLinks = [
-    { id: "home", label: "Home" },
+    // { id: "home", label: "Home" },
     { id: "what-is-g60", label: "What is G60?" },
     { id: "why-it-works", label: "Why It Works" },
     { id: "meet-your-mentor", label: "Meet Your Mentor" },
@@ -70,18 +79,20 @@ const G60LandingPage = () => {
             : "bg-transparent py-4"
         }`}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-2">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full bg-[#D4A017] flex items-center justify-center">
-                <span className="text-[#0F2147] font-bold text-xl">G</span>
+            <a href="#home">
+              <div className="flex items-center space-x-2">
+                <div className="w-10 h-10 rounded-full bg-[#D4A017] flex items-center justify-center">
+                  <span className="text-[#0F2147] font-bold text-xl">G</span>
+                </div>
+                <span className="text-2xl font-bold text-[#D4A017]">G60</span>
               </div>
-              <span className="text-2xl font-bold text-[#D4A017]">G60</span>
-            </div>
+            </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
@@ -95,9 +106,11 @@ const G60LandingPage = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button className="bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold px-6 py-2 rounded-md transition-all duration-300 transform hover:scale-105">
-                Register Free
-              </button>
+              <a href="#how-to-attend">
+                <button className="bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold px-6 py-2 rounded-md transition-all duration-300 transform hover:scale-105">
+                  Register Free
+                </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -123,9 +136,11 @@ const G60LandingPage = () => {
                     {link.label}
                   </a>
                 ))}
-                <button className="bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold px-6 py-2 rounded-md transition-all duration-300 mt-4 w-full">
-                  Register Free
-                </button>
+                <a href="#how-to-attend">
+                  <button className="bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold px-6 py-2 rounded-md transition-all duration-300 mt-4 w-full">
+                    Register Free
+                  </button>
+                </a>
               </div>
             </div>
           )}
@@ -138,7 +153,7 @@ const G60LandingPage = () => {
         className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20 pt-32"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#D4A017]/10 via-transparent to-[#0F2147]/20"></div>
-        <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="container mx-auto max-w-7xl relative z-10 px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
@@ -348,7 +363,6 @@ const G60LandingPage = () => {
                   "20+ years of professional experience and mentorship",
                   "Impacted over 1 million people in transforming their health",
                   "Guided 500+ individuals to elevate their health, wealth, and relationships",
-                  "Author, podcast host, and featured speaker across global platforms",
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -661,13 +675,19 @@ const G60LandingPage = () => {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row sm:w-100 gap-4">
-              <button className="inline-flex items-center justify-center h-11 rounded-md px-8 flex-1 bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold text-lg py-6">
-                Register Free — Save My Spot
-              </button>
-              {/* <button className="inline-flex items-center justify-center text-sm font-medium border bg-background hover:text-accent-foreground h-11 rounded-md px-8 flex-1 border-[#D4A017] text-[#D4A017] hover:bg-[#D4A017]/10">
-                <FaGift className="mr-2" /> Invite & Earn
-              </button> */}
+
+            <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row sm:w-auto gap-4 justify-center">
+                <a
+                  href="https://forms.gle/6boaEuZfc4hnSMdx9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="inline-flex items-center justify-center h-11 rounded-md px-8 bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold text-lg py-6">
+                    Register Free — Save My Spot
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -703,7 +723,7 @@ const G60LandingPage = () => {
                 </button>
                 {activeFAQ === index && (
                   <div className="px-6 py-4 bg-[#D4A017]/5 text-gray-300">
-                    This is the answer to the question: {faq}
+                    {faqsAns[index]}
                   </div>
                 )}
               </div>
@@ -760,10 +780,10 @@ const G60LandingPage = () => {
               <p className="text-sm text-gray-400">
                 Email:{" "}
                 <a
-                  href="mailto:teamg60@gmail.com"
+                  href="g60community@gmail.com"
                   className="text-[#D4A017] hover:underline"
                 >
-                  teamg60@gmail.com
+                  g60community@gmail.com
                 </a>
               </p>
             </div>
