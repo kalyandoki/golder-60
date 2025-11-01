@@ -679,15 +679,14 @@ const G60LandingPage = () => {
 
             <div className="flex justify-center">
               <div className="flex flex-col sm:flex-row sm:w-auto gap-4 justify-center">
-                <a
+                {/* <a
                   href="https://forms.gle/6boaEuZfc4hnSMdx9"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  <button className="inline-flex items-center justify-center h-11 rounded-md px-8 bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold text-lg py-6">
-                    Register Free — Save My Spot
-                  </button>
-                </a>
+                ></a> */}
+                <button className="inline-flex items-center justify-center h-11 rounded-md px-8 bg-[#D4A017] hover:bg-[#D4A017]/90 text-[#0F2147] font-semibold text-lg py-6">
+                  Register Free — Save My Spot
+                </button>
               </div>
             </div>
           </div>
